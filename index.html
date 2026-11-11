@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ms" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coway Malaysia | Promosi Penapis Air & Udara Terkini</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        coway: {
+                            50: '#e6f7ff',
+                            100: '#bae7ff',
+                            400: '#36cfc9',
+                            500: '#00a0e9',
+                            600: '#007bb8',
+                            700: '#005b8a',
+                            dark: '#0b132b',
+                            card: '#1c2541',
+                            accent: '#48cae4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b132b;
+            color: #e0e6ed;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00a0e9 0%, #48cae4 50%, #90e0ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(0, 160, 233, 0.3);
+        }
+        .glow-effect-lg {
+            box-shadow: 0 0 40px rgba(0, 160, 233, 0.4);
+        }
+        .custom-glass {
+            background: rgba(28, 37, 65, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b132b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2541;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00a0e9;
+        }
+    </style>
+</head>
+<body class="bg-coway-dark text-slate-100 min-h-screen flex flex-col justify-between selection:bg-coway-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-cyan-900 via-coway-600 to-blue-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide shadow-md">
+        <span class="inline-block animate-pulse mr-2">🔥</span> 
+        PROMO TERHAD: <strong>PERCUMA Pemasangan & Yuran Pendaftaran (Jimat RM200)</strong> + Percuma Servis & Sanitasi Periodik!
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 custom-glass border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-coway-500 to-cyan-400 flex items-center justify-center font-black text-2xl text-white shadow-lg">
+                        C
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-wider text-white">COWAY</span>
+                        <span class="block text-[10px] text-coway-accent tracking-widest font-semibold uppercase">Authorized Health Planner</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#produk" class="hover:text-coway-500 transition-colors">Katalog Produk</a>
+                    <a href="#kalkulator" class="hover:text-coway-500 transition-colors">Kalkulator Sewa</a>
+                    <a href="#quiz" class="hover:text-coway-500 transition-colors">Cadangan Model</a>
+                    <a href="#ejen" class="hover:text-coway-500 transition-colors">Ejen Sah</a>
+                    <a href="#testimoni" class="hover:text-coway-500 transition-colors">Testimoni</a>
+                </div>
+
+                <!-- Call Action Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="https://wa.me/60195264793?text=Hai%20Coway%20Health%20Planner,%20saya%20nak%20tanya%20promosi%20terkini." target="_blank" class="bg-gradient-to-r from-coway-500 to-cyan-500 hover:from-coway-600 hover:to-cyan-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-coway-500/25 transition duration-300 flex items-center gap-2 text-sm">
+                        <i class="fab font-bold fa-whatsapp text-lg"></i> Hubungi Ejen
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden custom-glass border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#produk" class="block py-2 text-slate-200 hover:text-coway-500 font-medium">Katalog Produk</a>
+            <a href="#kalkulator" class="block py-2 text-slate-200 hover:text-coway-500 font-medium">Kalkulator Sewa</a>
+            <a href="#quiz" class="block py-2 text-slate-200 hover:text-coway-500 font-medium">Pilih Model Quiz</a>
+            <a href="#ejen" class="block py-2 text-slate-200 hover:text-coway-500 font-medium">Ejen Sah</a>
+            <a href="#testimoni" class="block py-2 text-slate-200 hover:text-coway-500 font-medium">Testimoni</a>
+            <a href="#borang" class="block w-full text-center bg-coway-500 text-white py-3 rounded-xl font-semibold mt-4">Tanyakan Promosi Hari Ini</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-coway-dark via-slate-900 to-coway-dark">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-coway-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-coway-500/30 bg-coway-500/10 text-coway-accent text-xs sm:text-sm font-medium">
+                        <span class="flex h-2 w-2 rounded-full bg-coway-500 animate-ping"></span>
+                        Promosi Bulanan Rasmi Coway Malaysia
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Nikmati Air Clean & Udara Segar <br class="hidden sm:inline">
+                        <span class="gradient-text">Serendah RM2.15 Sehari</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Dapatkan penapis air panas, sejuk & suam serta penapis udara pintar Coway. PERCUMA Servis berkala, Pertukaran Penapis (Filter), dan Jaminan Penuh (Warranty).
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-slate-300">
+                        <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/50">
+                            <i class="fas fa-check-circle text-coway-500"></i> Pendaftaran $0
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/50">
+                            <i class="fas fa-check-circle text-coway-500"></i> Percuma Servis 5 Tahun
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/50">
+                            <i class="fas fa-check-circle text-coway-500"></i> Pemasangan Seluruh M'sia
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#borang" class="w-full sm:w-auto bg-gradient-to-r from-coway-500 to-cyan-500 hover:from-coway-600 hover:to-cyan-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-coway-500/30 transition transform hover:-translate-y-0.5 text-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Mohon Sekarang (Tanpa Slip Gaji)
+                        </a>
+                        <a href="https://wa.me/60195264793?text=Hai,%20saya%20berminat%20nak%20tanya%20pakej%20Coway!" target="_blank" class="w-full sm:w-auto border border-coway-500/50 hover:border-coway-500 text-coway-accent hover:bg-coway-500/10 font-bold px-8 py-4 rounded-xl transition text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-xl text-green-400"></i> Direct WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Hero Graphic / Product Preview -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Main Card -->
+                        <div class="custom-glass p-6 rounded-3xl shadow-2xl border border-slate-700/50 relative z-10 glow-effect">
+                            <div class="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md animate-bounce">
+                                HOT ITEM
+                            </div>
+                            <img src="https://placehold.co/600x600/1c2541/00a0e9?text=Coway+Neo+Plus" alt="Coway Neo Plus" class="w-full h-64 object-contain rounded-2xl mb-4 bg-slate-900/50 p-4">
+                            
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Neo Plus (CHP-264L)</h3>
+                                    <p class="text-xs text-slate-400">Model Paling Populer & Economical</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-2xl font-extrabold text-coway-accent">RM 65</span>
+                                    <span class="text-xs block text-slate-400">/ bulan</span>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-800 my-4">
+
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                                <div class="bg-slate-800/80 p-2 rounded-lg">
+                                    <span class="text-slate-400 block">Kapasiti</span>
+                                    <strong class="text-slate-200">5.8 Litre</strong>
+                                </div>
+                                <div class="bg-slate-800/80 p-2 rounded-lg">
+                                    <span class="text-slate-400 block">Suhu</span>
+                                    <strong class="text-slate-200">3 (Panas/Sejuk/Biasa)</strong>
+                                </div>
+                                <div class="bg-slate-800/80 p-2 rounded-lg">
+                                    <span class="text-slate-400 block">Pendaftaran</span>
+                                    <strong class="text-emerald-400">FREE</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Eco Badge -->
+                        <div class="absolute -bottom-5 -left-5 bg-slate-900/90 border border-coway-500/40 p-4 rounded-2xl z-20 flex items-center gap-3 shadow-xl backdrop-blur-md">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                                <i class="fas fa-leaf text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-200">Eco-Mode System</h4>
+                                <p class="text-[10px] text-slate-400">Penjimatan Tenaga Elektrik</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Flash Deal / Monthly Promo Banner Section -->
+    <section class="py-10 bg-slate-900/80 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-cyan-900/40 via-coway- card to-blue-900/40 p-6 sm:p-8 rounded-3xl border border-coway-500/30 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                <div class="space-y-2 text-center md:text-left z-10">
+                    <div class="inline-block bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase">
+                        Tawaran Masa Terhad
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white">Promosi WOW Combo Coway!</h2>
+                    <p class="text-slate-300 text-sm max-w-xl">
+                        Dapatkan gabungan Penapis Air + Udara dengan potongan sewaan sehingga <strong>20% SETIAP BULAN</strong>. Percuma hadiah eksklusif bagi 30 pemohon pertama bulan ini.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 z-10 w-full md:w-auto">
+                    <a href="#borang" class="bg-coway-500 hover:bg-coway-600 text-white text-center px-6 py-3.5 rounded-xl font-bold text-sm shadow-md transition">
+                        Klaim Baucer Combo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section (Tabbed Grid) -->
+    <section id="produk" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-3 mb-12">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-coway-accent">Katalog Produk Coway</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Pilih Produk Untuk Kediaman Anda</p>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Semua pakej sewaan termasuk Servis Sanitasi Periodik percuma setiap 2 bulan & penukaran filter percuma setiap 4 bulan.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+                <div class="inline-flex p-1.5 bg-slate-900/90 rounded-2xl border border-slate-800 space-x-2">
+                    <button onclick="switchTab('water')" id="tab-water" class="tab-btn active-tab px-5 py-2.5 rounded-xl text-sm font-bold transition duration-200 bg-coway-500 text-white shadow-md">
+                        <i class="fas fa-glass-water mr-2"></i> Penapis Air
+                    </button>
+                    <button onclick="switchTab('air')" id="tab-air" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition duration-200 text-slate-400 hover:text-white">
+                        <i class="fas fa-wind mr-2"></i> Penapis Udara
+                    </button>
+                    <button onclick="switchTab('mattress')" id="tab-mattress" class="tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition duration-200 text-slate-400 hover:text-white">
+                        <i class="fas fa-bed mr-2"></i> Tilam & Kerusi Urut
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: WATER PURIFIERS -->
+            <div id="content-water" class="product-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Product Card 1: Neo Plus -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded">TERLARIS</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Neo+Plus" alt="Neo Plus" class="h-44 mx-auto object-contain group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Neo Plus</h3>
+                        <p class="text-xs text-slate-400 mb-3">Model Paling Jimat & Popular</p>
+                        
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Kapasiti Tangki:</span>
+                                <span>5.8 Litre</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Tetapan Suhu:</span>
+                                <span>Panas, Sejuk, Biasa</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Sesuai Untuk:</span>
+                                <span>2 - 5 Ahli Keluarga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-[10px] text-slate-400 uppercase tracking-wider">Sewa Bulanan Bermula</div>
+                            <div class="text-2xl font-black text-coway-accent">RM 65 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                            <div class="text-[10px] text-slate-500 line-through">Harga Asal: RM 85/bln</div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Neo Plus')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Villaem II -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-blue-500/20 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded">FAVORIT KELUARGA</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Villaem+II" alt="Villaem II" class="h-44 mx-auto object-contain group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Villaem II</h3>
+                        <p class="text-xs text-slate-400 mb-3">Kawalan Suhu Dail Mudah</p>
+                        
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Kapasiti Tangki:</span>
+                                <span>11.3 Litre</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Tetapan Suhu:</span>
+                                <span>4 Suhu Suam & Sejuk</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Sesuai Untuk:</span>
+                                <span>4 - 8 Ahli Keluarga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-[10px] text-slate-400 uppercase tracking-wider">Sewa Bulanan Bermula</div>
+                            <div class="text-2xl font-black text-coway-accent">RM 89 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                            <div class="text-[10px] text-slate-500 line-through">Harga Asal: RM 120/bln</div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Villaem II')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Ombak -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-purple-500/20 text-purple-400 text-[10px] font-bold px-2 py-0.5 rounded">TANGKI BESAR</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Ombak" alt="Ombak" class="h-44 mx-auto object-contain group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Ombak (CHP-7310R)</h3>
+                        <p class="text-xs text-slate-400 mb-3">50 Tetapan Suhu Tersuai</p>
+                        
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Kapasiti Tangki:</span>
+                                <span>13.5 Litre</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Tetapan Suhu:</span>
+                                <span>Pelbagai (Susu Bayi dll)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Sesuai Untuk:</span>
+                                <span>Keluarga Besar / Pejabat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-[10px] text-slate-400 uppercase tracking-wider">Sewa Bulanan Bermula</div>
+                            <div class="text-2xl font-black text-coway-accent">RM 120 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                            <div class="text-[10px] text-slate-500 line-through">Harga Asal: RM 140/bln</div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Ombak')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4: Cinnamon -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-amber-500/20 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded">SLIM DESIGN</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Cinnamon" alt="Cinnamon" class="h-44 mx-auto object-contain group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Cinnamon</h3>
+                        <p class="text-xs text-slate-400 mb-3">Model Minimalis Suhu Biassa/Panas</p>
+                        
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Kapasiti Tangki:</span>
+                                <span>5.0 Litre</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Tetapan Suhu:</span>
+                                <span>Panas & Room Temp</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Sesuai Untuk:</span>
+                                <span>Keluarga Kecil / Bujang</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-[10px] text-slate-400 uppercase tracking-wider">Sewa Bulanan Bermula</div>
+                            <div class="text-2xl font-black text-coway-accent">RM 55 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                            <div class="text-[10px] text-slate-500 line-through">Harga Asal: RM 69/bln</div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Cinnamon')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB CONTENT: AIR PURIFIERS -->
+            <div id="content-air" class="product-content hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Storm -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-cyan-500/20 text-cyan-400 text-[10px] font-bold px-2 py-0.5 rounded">2-IN-1 FAN & AIR</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Storm+Air" alt="Storm" class="h-44 mx-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Storm Air Purifier</h3>
+                        <p class="text-xs text-slate-400 mb-3">Pembersih Udara + Kipas Angin Pintar</p>
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Liputan Bilik:</span>
+                                <span>Sehingga 50 m² (535 sqft)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Tapisan:</span>
+                                <span>HEPA Penapis + Deodorisation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-2xl font-black text-coway-accent">RM 70 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Storm Air')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">Pesan Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- Breeze -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded">SLIM & SLIM</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Breeze+Air" alt="Breeze" class="h-44 mx-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Breeze Air Purifier</h3>
+                        <p class="text-xs text-slate-400 mb-3">Ringkas, Senyap & Sangat Efisien</p>
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Liputan Bilik:</span>
+                                <span>Sehingga 33.9 m²</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Tapisan:</span>
+                                <span>Smart Dust Sensor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-2xl font-black text-coway-accent">RM 59 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Breeze Air')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">Pesan Sekarang</a>
+                    </div>
+                </div>
+
+                <!-- Noble -->
+                <div class="custom-glass rounded-2xl p-5 border border-slate-800 hover:border-coway-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-slate-900/60 rounded-xl p-4 mb-4 text-center">
+                            <span class="absolute top-2 left-2 bg-amber-500/20 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded">PREMIUM 360°</span>
+                            <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Noble+Air" alt="Noble" class="h-44 mx-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Noble Air Purifier</h3>
+                        <p class="text-xs text-slate-400 mb-3">Reka Bentuk Seni & UVC Sterilization</p>
+                        <div class="space-y-1.5 text-xs text-slate-300 mb-4">
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Liputan Bilik:</span>
+                                <span>Sehingga 66 m² (Keluasan Besar)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 py-1">
+                                <span class="text-slate-400">Teknologi:</span>
+                                <span>360° Architectural Purification</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-slate-900/80 p-3 rounded-xl mb-4 text-center">
+                            <div class="text-2xl font-black text-coway-accent">RM 140 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                        </div>
+                        <a href="#borang" onclick="selectProduct('Noble Air')" class="block w-full text-center bg-slate-800 hover:bg-coway-500 text-white font-semibold py-2.5 rounded-xl text-xs transition">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: MATTRESS & MASSAGE CHAIR -->
+            <div id="content-mattress" class="product-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Prime Mattress -->
+                <div class="custom-glass rounded-2xl p-6 border border-slate-800 flex flex-col md:flex-row gap-6 items-center">
+                    <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Prime+Mattress" alt="Prime Mattress" class="w-full md:w-1/2 h-48 object-contain bg-slate-900/60 rounded-xl p-2">
+                    <div class="w-full md:w-1/2 space-y-3">
+                        <h3 class="text-xl font-bold text-white">Prime Series Mattress</h3>
+                        <p class="text-xs text-slate-400">Tilam Ergonomik dengan Servis Pembersihan Periodik 7-Langkah.</p>
+                        <div class="text-2xl font-black text-coway-accent">RM 139 <span class="text-xs font-normal text-slate-400">/bln (King/Queen)</span></div>
+                        <a href="#borang" onclick="selectProduct('Prime Mattress')" class="block w-full text-center bg-coway-500 hover:bg-coway-600 text-white font-semibold py-2.5 rounded-xl text-xs transition">Tempah Tilam</a>
+                    </div>
+                </div>
+
+                <!-- Mine Massage Chair -->
+                <div class="custom-glass rounded-2xl p-6 border border-slate-800 flex flex-col md:flex-row gap-6 items-center">
+                    <img src="https://placehold.co/400x400/1c2541/00a0e9?text=Massage+Chair" alt="Mine Massage Chair" class="w-full md:w-1/2 h-48 object-contain bg-slate-900/60 rounded-xl p-2">
+                    <div class="w-full md:w-1/2 space-y-3">
+                        <h3 class="text-xl font-bold text-white">Mine Massage Chair</h3>
+                        <p class="text-xs text-slate-400">Kerusi Urut Kompak Moden & Urutan Menyeluruh.</p>
+                        <div class="text-2xl font-black text-coway-accent">RM 145 <span class="text-xs font-normal text-slate-400">/bln</span></div>
+                        <a href="#borang" onclick="selectProduct('Mine Massage Chair')" class="block w-full text-center bg-coway-500 hover:bg-coway-600 text-white font-semibold py-2.5 rounded-xl text-xs transition">Tempah Kerusi Urut</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Rental Monthly Calculator -->
+    <section id="kalkulator" class="py-16 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="custom-glass rounded-3xl p-6 sm:p-10 border border-slate-700/60 shadow-xl">
+                
+                <div class="text-center space-y-2 mb-8">
+                    <span class="text-xs font-bold text-coway-accent uppercase tracking-wider">Kalkulator Interaktif</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Kira Anggaran Sewaan & Penjimatan Anda</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Semak pakej fleksibel mengikut tempoh kontrak pilihan anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Calculator Inputs -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">1. Pilih Produk</label>
+                            <select id="calc-product" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-coway-500">
+                                <option value="neo" data-3yr="85" data-5yr="65" data-7yr="55">Penapis Air - Neo Plus</option>
+                                <option value="villaem" data-3yr="120" data-5yr="89" data-7yr="75">Penapis Air - Villaem II</option>
+                                <option value="ombak" data-3yr="140" data-5yr="120" data-7yr="99">Penapis Air - Ombak</option>
+                                <option value="storm" data-3yr="90" data-5yr="70" data-7yr="59">Penapis Udara - Storm</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">2. Pilih Pakej Kontrak Sewaan</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" onclick="setContract(3)" id="btn-3yr" class="contract-btn py-2.5 px-3 rounded-xl border border-slate-700 text-xs font-semibold bg-slate-900 text-slate-300 hover:border-coway-500">3 Tahun</button>
+                                <button type="button" onclick="setContract(5)" id="btn-5yr" class="contract-btn active-contract py-2.5 px-3 rounded-xl border border-coway-500 text-xs font-semibold bg-coway-500 text-white">5 Tahun</button>
+                                <button type="button" onclick="setContract(7)" id="btn-7yr" class="contract-btn py-2.5 px-3 rounded-xl border border-slate-700 text-xs font-semibold bg-slate-900 text-slate-300 hover:border-coway-500">7 Tahun (Super Saver)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Output Display -->
+                    <div class="bg-slate-900/90 rounded-2xl p-6 border border-coway-500/30 text-center space-y-4">
+                        <div class="text-xs text-slate-400">Anggaran Yuran Sewaan Bulanan</div>
+                        <div class="text-4xl font-black text-coway-accent" id="calc-result-price">RM 65 <span class="text-sm font-normal text-slate-400">/ bulan</span></div>
+                        
+                        <div class="pt-2 space-y-2 text-xs text-slate-300">
+                            <div class="flex justify-between items-center bg-slate-800/60 p-2 rounded-lg">
+                                <span>Pendaftaran & Pemasangan:</span>
+                                <span class="text-emerald-400 font-bold">PERCUMA (Jimat RM200)</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-800/60 p-2 rounded-lg">
+                                <span>Servis Sanitasi Periodik:</span>
+                                <span class="text-coway-accent font-bold">Percuma Setiap 2 Bulan</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-800/60 p-2 rounded-lg">
+                                <span>Tukar Filter Berkala:</span>
+                                <span class="text-coway-accent font-bold">Percuma Sepanjang Kontrak</span>
+                            </div>
+                        </div>
+
+                        <a href="#borang" class="block w-full bg-gradient-to-r from-coway-500 to-cyan-500 hover:from-coway-600 hover:to-cyan-600 text-white font-bold py-3 rounded-xl text-xs transition shadow-lg">
+                            Dapatkan Pakej Ini Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Wizard Section -->
+    <section id="quiz" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="custom-glass p-8 sm:p-10 rounded-3xl border border-slate-800 text-center relative overflow-hidden">
+                <div class="space-y-3 mb-8">
+                    <span class="text-xs font-bold text-coway-accent uppercase">Pilih Model Terbaik</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Quiz Padanan Model Coway 3-Langkah</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Jawab 3 soalan ringkas untuk mengetahui produk yang paling sesuai dengan keperluan rumah anda.</p>
+                </div>
+
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Step 1 -->
+                    <div id="quiz-step-1" class="quiz-step">
+                        <p class="text-sm font-bold text-slate-200 mb-4">1. Berapa saiz isi rumah / ahli keluarga anda?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="quizAnswer(1, 'small')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">1 - 3 Orang (Bujang / Pasangan)</button>
+                            <button onclick="quizAnswer(1, 'medium')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">4 - 6 Orang (Sederhana)</button>
+                            <button onclick="quizAnswer(1, 'large')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">7+ Orang (Ramai / Pejabat)</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div id="quiz-step-2" class="quiz-step hidden">
+                        <p class="text-sm font-bold text-slate-200 mb-4">2. Apakah kegunaan utama penapis air anda?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="quizAnswer(2, 'basic')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">Minum Biasa & Air Sejuk Harian</button>
+                            <button onclick="quizAnswer(2, 'baby')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">Bancuh Susu Bayi / Kopi Spesifik</button>
+                            <button onclick="quizAnswer(2, 'cooking')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">Kerap Memasak & Guna Air Banyak</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div id="quiz-step-3" class="quiz-step hidden">
+                        <p class="text-sm font-bold text-slate-200 mb-4">3. Apakah bajet sewaan bulanan pilihan anda?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="quizAnswer(3, 'budget')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">RM 50 - RM 70 / bulan</button>
+                            <button onclick="quizAnswer(3, 'mid')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">RM 70 - RM 100 / bulan</button>
+                            <button onclick="quizAnswer(3, 'high')" class="p-4 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:border-coway-500 transition text-slate-300">RM 100+ / bulan</button>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="quiz-result" class="hidden space-y-4 bg-slate-900/90 p-6 rounded-2xl border border-coway-500/40">
+                        <h3 class="text-lg font-bold text-emerald-400">Cadangan Model Terbaik Untuk Anda:</h3>
+                        <div id="quiz-recommendation-name" class="text-2xl font-black text-white">Coway Neo Plus</div>
+                        <p id="quiz-recommendation-desc" class="text-xs text-slate-300">Sesuai untuk kegunaan harian keluarga dengan gabungan air panas, sejuk dan biasa yang sangat menjimatkan.</p>
+                        <a href="#borang" class="inline-block bg-coway-500 hover:bg-coway-600 text-white font-bold px-6 py-3 rounded-xl text-xs transition">
+                            Tempah Model Ini Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="testimoni" class="py-16 bg-slate-900/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-2 mb-12">
+                <span class="text-xs font-bold text-coway-accent uppercase">Testimoni Pelanggan</span>
+                <h2 class="text-3xl font-extrabold text-white">Apa Kata Pengguna Coway?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="custom-glass p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 text-xs flex gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 italic">"Pemasangan pantas sangat! Harini apply, lusa ejen terus datang pasang kat rumah. Air sejuk sentiasa ada, tak payah nak isi botol air lagi."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80 mt-4">
+                        <div class="w-9 h-9 rounded-full bg-coway-500/20 text-coway-accent font-bold flex items-center justify-center text-xs">A</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Amirul Syafiq</h4>
+                            <span class="text-[10px] text-slate-400">Shah Alam, Selangor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="custom-glass p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 text-xs flex gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 italic">"Guna penapis udara Storm memang berkesan untuk anak saya yang ada alahan habuk. Bila tidur malam dah tak bersin-bersin lagi."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80 mt-4">
+                        <div class="w-9 h-9 rounded-full bg-coway-500/20 text-coway-accent font-bold flex items-center justify-center text-xs">N</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Nurul Huda</h4>
+                            <span class="text-[10px] text-slate-400">Johor Bahru, Johor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="custom-glass p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-400 text-xs flex gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 italic">"Ejen amat mesra dan membantu dari A sampai Z. Tak perlu slip gaji pun boleh mohon dengan senang. Servis setiap 2 bulan terpelihara!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80 mt-4">
+                        <div class="w-9 h-9 rounded-full bg-coway-500/20 text-coway-accent font-bold flex items-center justify-center text-xs">K</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white">Khairul Anwar</h4>
+                            <span class="text-[10px] text-slate-400">Georgetown, Penang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Identity Card Section -->
+    <section id="ejen" class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="custom-glass rounded-3xl p-6 sm:p-8 border border-coway-500/30 flex flex-col sm:flex-row items-center gap-6">
+                <div class="relative">
+                    <img src="https://placehold.co/300x300/1c2541/00a0e9?text=Ejen+Coway" alt="Coway Agent" class="w-32 h-32 rounded-2xl object-cover border-2 border-coway-500">
+                    <span class="absolute -bottom-2 -right-2 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">VERIFIED</span>
+                </div>
+                <div class="space-y-2 text-center sm:text-left flex-1">
+                    <div class="text-xs text-coway-accent font-semibold">Authorized Coway Health Planner</div>
+                    <h3 class="text-xl font-bold text-white">Faizal Rahman (HP Code: 589201)</h3>
+                    <p class="text-xs text-slate-300">Pengalaman lebih 5 tahun membantu beribu-ribu keluarga di Malaysia mendapatkan bekalan air bersih & udara segar.</p>
+                    <div class="pt-2 flex flex-wrap justify-center sm:justify-start gap-4 text-xs">
+                        <span class="text-slate-400"><i class="fas fa-phone-alt text-coway-500 mr-1"></i> +60 195264793</span>
+                        <span class="text-slate-400"><i class="fas fa-envelope text-coway-500 mr-1"></i> faizal.coway@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Lead Form / Order Section -->
+    <section id="borang" class="py-20 bg-slate-900/80 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="custom-glass p-8 sm:p-10 rounded-3xl border border-slate-700 shadow-2xl relative">
+                
+                <div class="text-center space-y-2 mb-8">
+                    <span class="text-xs font-bold text-coway-accent uppercase tracking-wider">Permohonan Pantas</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Borang Tempahan & Pertanyaan Coway</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Isi borang ringkas di bawah. Maklumat akan terus dihantar terus ke WhatsApp Ejen Sah.</p>
+                </div>
+
+                <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Penuh *</label>
+                        <input type="text" id="form-name" required placeholder="Contoh: Ahmad Albab" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-coway-500">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nombor WhatsApp / Telefon *</label>
+                            <input type="tel" id="form-phone" required placeholder="0195264793" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-coway-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Negeri / Lokasi *</label>
+                            <select id="form-state" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-coway-500">
+                                <option value="">-- Pilih Negeri --</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Terengganu">Terengganu</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Sarawak">Sarawak</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Produk Pilihan *</label>
+                        <select id="form-product" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-coway-500">
+                            <option value="Neo Plus (Water)">Penapis Air - Neo Plus (RM 65/bln)</option>
+                            <option value="Villaem II (Water)">Penapis Air - Villaem II (RM 89/bln)</option>
+                            <option value="Ombak (Water)">Penapis Air - Ombak (RM 120/bln)</option>
+                            <option value="Cinnamon (Water)">Penapis Air - Cinnamon (RM 55/bln)</option>
+                            <option value="Storm (Air Purifier)">Penapis Udara - Storm (RM 70/bln)</option>
+                            <option value="Breeze (Air Purifier)">Penapis Udara - Breeze (RM 59/bln)</option>
+                            <option value="Prime Mattress">Tilam - Prime Series (RM 139/bln)</option>
+                            <option value="Lain-lain Promo">Ingin Pertanyaan / Konsultasi Dulu</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Catatan Tambahan (Opsional)</label>
+                        <textarea id="form-notes" rows="2" placeholder="Contoh: Nak pasang secepat mungkin / tanya combo deal..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-coway-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold py-4 rounded-xl text-sm transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-xl"></i> Hantar Ke WhatsApp Ejen Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-10 border-t border-slate-900 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center space-x-2">
+                <span class="text-lg font-black text-white">COWAY MALAYSIA</span>
+            </div>
+            <p class="max-w-xl mx-auto text-slate-500">
+                Penafian: Laman web ini diselenggara oleh Ejen Sah Coway (Health Planner). Hak cipta jenama dan logo Coway adalah milik Coway Co., Ltd.
+            </p>
+            <p>&copy; 2026 Coway Health Planner Malaysia. Hak Cipta Terelihara.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/60195264793?text=Hai%20Coway!%20Saya%20nak%20tanya%20promosi%20penapis%20air%20terkini." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition duration-300 hover:scale-110 glow-effect">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab Switching Logic
+        function switchTab(category) {
+            // Hide all tab contents
+            document.querySelectorAll('.product-content').forEach(el => el.classList.add('hidden'));
+            
+            // Deactivate all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-coway-500', 'text-white', 'shadow-md');
+                btn.classList.add('text-slate-400');
+            });
+
+            // Show selected content & style button
+            document.getElementById(`content-${category}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${category}`);
+            activeBtn.classList.add('bg-coway-500', 'text-white', 'shadow-md');
+            activeBtn.classList.remove('text-slate-400');
+        }
+
+        // Rental Calculator Logic
+        let currentContract = 5;
+        const calcProduct = document.getElementById('calc-product');
+        const calcPriceDisplay = document.getElementById('calc-result-price');
+
+        function setContract(years) {
+            currentContract = years;
+            document.querySelectorAll('.contract-btn').forEach(btn => {
+                btn.classList.remove('bg-coway-500', 'text-white', 'border-coway-500');
+                btn.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-700');
+            });
+            const activeBtn = document.getElementById(`btn-${years}yr`);
+            activeBtn.classList.add('bg-coway-500', 'text-white', 'border-coway-500');
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const selectedOption = calcProduct.options[calcProduct.selectedIndex];
+            const price = selectedOption.getAttribute(`data-${currentContract}yr`);
+            calcPriceDisplay.innerHTML = `RM ${price} <span class="text-sm font-normal text-slate-400">/ bulan</span>`;
+        }
+
+        calcProduct.addEventListener('change', updateCalculator);
+
+        // Auto select product into form
+        function selectProduct(productName) {
+            const selectEl = document.getElementById('form-product');
+            for(let i=0; i<selectEl.options.length; i++) {
+                if(selectEl.options[i].value.includes(productName)) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Quiz Logic
+        let quizAnswers = {};
+
+        function quizAnswer(step, answer) {
+            quizAnswers[step] = answer;
+            document.getElementById(`quiz-step-${step}`).classList.add('hidden');
+            
+            if(step < 3) {
+                document.getElementById(`quiz-step-${step + 1}`).classList.remove('hidden');
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            const resultDiv = document.getElementById('quiz-result');
+            const nameEl = document.getElementById('quiz-recommendation-name');
+            const descEl = document.getElementById('quiz-recommendation-desc');
+            
+            resultDiv.classList.remove('hidden');
+
+            if(quizAnswers[1] === 'small' || quizAnswers[3] === 'budget') {
+                nameEl.textContent = "Coway Neo Plus";
+                descEl.textContent = "Model bajet terbaik dengan 3 suhu air. Sangat popular & menjimatkan untuk keluarga kecil.";
+            } else if(quizAnswers[2] === 'baby' || quizAnswers[1] === 'medium') {
+                nameEl.textContent = "Coway Villaem II";
+                descEl.textContent = "Model ideal untuk penyediaan susu bayi dan bancuhan minuman dengan kawalan dail suhu 4-peringkat.";
+            } else {
+                nameEl.textContent = "Coway Ombak";
+                descEl.textContent = "Kapasiti tangki terbesar 13.5L dengan lebih 50 tetapan suhu tersuai untuk isi rumah ramai.";
+            }
+        }
+
+        // Form Submit Handler -> WhatsApp Pre-filled redirect
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const state = document.getElementById('form-state').value;
+            const product = document.getElementById('form-product').value;
+            const notes = document.getElementById('form-notes').value;
+
+            const text = `Salam Coway Planner,%0A%0ASaya berminat nak tempah / tanya promosi Coway:%0A- *Nama:* ${name}%0A- *No Tel:* ${phone}%0A- *Lokasi:* ${state}%0A- *Produk:* ${product}%0A- *Catatan:* ${notes ? notes : 'Tiada'}`;
+
+            // Replace with target Agent WhatsApp Phone Number
+            const whatsappNumber = "60195264793"; 
+            window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
